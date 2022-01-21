@@ -1,6 +1,8 @@
 package grafana
 
 import (
+	"crypto/md5"
+	"encoding/hex"
 	"fmt"
 	"path/filepath"
 
@@ -23,11 +25,9 @@ func NewDashboardHandler(provider Provider) *DashboardHandler {
 
 // Validate returns the uid of resource
 func (h *DashboardHandler) Validate(resource grizzly.Resource) error {
-	uid, exist := resource.GetSpecString("uid")
-	if exist {
-		if uid != resource.Name() {
-			return fmt.Errorf("uid '%s' and name '%s', don't match", uid, resource.Name())
-		}
+	uid, _ := resource.GetSpecString("uid")
+	if uid == "" {
+		return fmt.Errorf("no uid provided for the dashboard with the name '%s'", resource.Name())
 	}
 	return nil
 }
@@ -70,7 +70,11 @@ func (h *DashboardHandler) ResourceFilePath(resource grizzly.Resource, filetype 
 // Parse parses a manifest object into a struct for this resource type
 func (h *DashboardHandler) Parse(m manifest.Manifest) (grizzly.Resources, error) {
 	resource := grizzly.Resource(m)
-	resource.SetSpecString("uid", resource.GetMetadata("name"))
+	uid, _ := resource.GetSpecString("uid")
+	if uid == "" {
+		hash := md5.Sum([]byte(resource.Name()))
+		resource.SetSpecString("uid", hex.EncodeToString(hash[:]))
+	}
 	if !resource.HasMetadata("folder") {
 		resource.SetMetadata("folder", dashboardFolderDefault)
 	}
@@ -104,8 +108,8 @@ func (h *DashboardHandler) GetByUID(UID string) (*grizzly.Resource, error) {
 // GetRemote retrieves a dashboard as a resource
 func (h *DashboardHandler) GetRemote(resource grizzly.Resource) (*grizzly.Resource, error) {
 	uid, _ := resource.GetSpecString("uid")
-	if uid != resource.Name() {
-		return nil, fmt.Errorf("uid '%s' and name '%s', don't match", uid, resource.Name())
+	if uid == "" {
+		return nil, fmt.Errorf("no uid provided for the dashboard with the name '%s'", resource.Name())
 	}
 	return getRemoteDashboard(resource.Name())
 }
