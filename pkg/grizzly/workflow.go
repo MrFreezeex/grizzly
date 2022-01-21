@@ -10,8 +10,8 @@ import (
 	"strings"
 	"text/tabwriter"
 
-	"github.com/grafana/grizzly/pkg/grizzly/notifier"
-	"github.com/grafana/grizzly/pkg/term"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly/notifier"
+	"github.com/mrfreezeex/grizzly/pkg/term"
 	"github.com/pmezard/go-difflib/difflib"
 	log "github.com/sirupsen/logrus"
 	"golang.org/x/crypto/ssh/terminal"

@@ -6,9 +6,9 @@ import (
 	"os"
 	"strings"
 
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 	ctClient "github.com/grafana/cortex-tools/pkg/client"
 	"github.com/grafana/cortex-tools/pkg/rules"
-	"github.com/grafana/grizzly/pkg/grizzly"
 	"gopkg.in/yaml.v3"
 )
 

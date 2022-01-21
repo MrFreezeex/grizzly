@@ -1,10 +1,8 @@
-module github.com/grafana/grizzly
+module github.com/mrfreezeex/grizzly
 
 go 1.16
 
 require (
-	github.com/containerd/containerd v1.5.7 // indirect
-	github.com/docker/docker v20.10.7+incompatible // indirect
 	github.com/fatih/color v1.9.0
 	github.com/gdamore/tcell v1.3.0
 	github.com/go-clix/cli v0.2.0
@@ -17,7 +15,6 @@ require (
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/rivo/tview v0.0.0-20200818120338-53d50e499bf9
 	github.com/sirupsen/logrus v1.8.1
-	github.com/spf13/pflag v1.0.5
 	github.com/stretchr/testify v1.7.0
 	golang.org/x/crypto v0.0.0-20210322153248-0c34fe9e7dc2
 	gopkg.in/fsnotify.v1 v1.4.7

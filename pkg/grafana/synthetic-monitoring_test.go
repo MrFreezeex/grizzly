@@ -3,7 +3,7 @@ package grafana
 import (
 	"testing"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 	"github.com/grafana/synthetic-monitoring-agent/pkg/pb/synthetic_monitoring"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

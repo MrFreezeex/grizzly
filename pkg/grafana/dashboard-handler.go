@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"path/filepath"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
-	"github.com/grafana/grizzly/pkg/grizzly/notifier"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly/notifier"
 	"github.com/grafana/tanka/pkg/kubernetes/manifest"
 )
 

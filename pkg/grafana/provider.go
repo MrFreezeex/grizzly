@@ -3,7 +3,7 @@ package grafana
 import (
 	"path/filepath"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 )
 
 // Provider defines a Grafana Provider

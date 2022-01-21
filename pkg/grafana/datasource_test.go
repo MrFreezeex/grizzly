@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 	"github.com/stretchr/testify/require"
 )
 

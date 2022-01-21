@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 )
 
 func makeDatasourceRequest(url string) ([]byte, error) {

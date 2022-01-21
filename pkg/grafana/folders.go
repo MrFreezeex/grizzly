@@ -8,7 +8,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/grafana/grizzly/pkg/grizzly"
+	"github.com/mrfreezeex/grizzly/pkg/grizzly"
 )
 
 // getRemoteFolder retrieves a folder object from Grafana
